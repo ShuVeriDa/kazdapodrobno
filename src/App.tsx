@@ -15,15 +15,15 @@ function App(props: any) {
 
    return (
       <div className="App">
-         <Rating value={2}/>
-         <UnControlledRating/>
-         <Accordion titleValue={"Menu"}
-                    collapsed={accordionCollapsed}
-                    onChange={() => setAccordionCollapsed(!accordionCollapsed)}
-         />
+         {/*<Rating value={2}/>*/}
+         {/*<UnControlledRating/>*/}
+         {/*<Accordion titleValue={"Menu"}*/}
+         {/*           collapsed={accordionCollapsed}*/}
+         {/*           onChange={() => setAccordionCollapsed(!accordionCollapsed)}*/}
+         {/*/>*/}
          <UnControlledAccordion titleValue={"Menu"} />
-         <OnOff on={switchOn} onChange={(on) => setSwitchOn(on)}/>
-         <UnControlledOnOff onChange={setSwitchOn} /> {switchOn.toString()}
+         {/*<OnOff on={switchOn} onChange={(on) => setSwitchOn(on)}/>*/}
+         {/*<UnControlledOnOff onChange={setSwitchOn} /> {switchOn.toString()}*/}
       </div>
    );
 }

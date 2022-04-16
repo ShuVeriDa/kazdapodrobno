@@ -1,18 +1,20 @@
-import React, {useState} from 'react';
+import React, {useReducer, useState} from 'react';
+import {ActionType, reducer, TOGGLE_CONSTANT} from "./reducer";
 
 type UnControlledAccordionPropsType = {
    titleValue: string
 }
 
 export const UnControlledAccordion = (props: UnControlledAccordionPropsType) => {
-   const [collapsed, setCollapsed] = useState(false)
-   const onClickHandler = (b: boolean) => {
-      setCollapsed(b)
+   // const [collapsed, setCollapsed] = useState(false)
+   const [state, dispatch] = useReducer(reducer, {collapsed: false})
+   const onClickHandler = (b: ActionType) => {
+      dispatch(b)
    }
    return (
       <div>
-         <UnControlledAccordionTitle callBack={() => onClickHandler(!collapsed)} title={props.titleValue}/>
-         {collapsed && <UnControlledAccordionBody/>}
+         <UnControlledAccordionTitle callBack={() => onClickHandler({type: TOGGLE_CONSTANT})} title={props.titleValue}/>
+         {!state.collapsed && <UnControlledAccordionBody />}
       </div>
    );
 };
