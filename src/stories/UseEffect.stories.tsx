@@ -31,3 +31,21 @@ export const SimpleExample = () => {
       <button onClick={() => setCounter(counter + 1)}>counter+</button>
    </>
 }
+
+export const SetTimeoutExample = () => {
+   const [counter, setCounter] = useState(0)
+
+   console.log('SetTimeoutExample')
+
+   useEffect(() => {
+      setInterval(() => {
+         setCounter((state: number) => state + 1)
+      }, 1000)
+   }, [])
+
+
+
+   return <>
+      Hello, Counter: {counter}
+   </>
+}
